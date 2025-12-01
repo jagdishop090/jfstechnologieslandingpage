@@ -1,0 +1,745 @@
+/* 3D Container with Perspective */
+.device-mockup-container-3d {
+  width: 100%;
+  max-width: 697px;
+  min-height: 411px;
+  position: relative;
+  perspective: 2000px;
+  perspective-origin: center center;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.device-wrapper {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* Payment Cards - Upper Left with 3D Tilt */
+.payment-card-wrapper {
+  top: 10px;
+  left: 10px;
+  transform: rotateY(-15deg) rotateX(5deg) translateZ(50px);
+  z-index: 5;
+}
+
+.payment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+  width: 180px;
+  transform: translateZ(20px);
+}
+
+.payment-reminder {
+  border-left: 4px solid #ef4444;
+}
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.payment-logo-small {
+  width: 24px;
+  height: 24px;
+  background: #ef4444;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-company {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-due {
+  font-size: 10px;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-phone {
+  font-size: 9px;
+  color: #64748b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.collect-payment {
+  text-align: center;
+  border: 2px dashed #e5e7eb;
+}
+
+.upi-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.collect-text {
+  font-size: 11px;
+  color: #64748b;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Central Monitor - Main Focus with 3D Tilt */
+.monitor-wrapper {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotateY(-8deg) rotateX(3deg) translateZ(100px);
+  z-index: 10;
+  width: 400px;
+}
+
+.monitor-frame {
+  background: #2a2a2a;
+  border-radius: 12px 12px 4px 4px;
+  padding: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: translateZ(30px);
+}
+
+.monitor-stand {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 20px;
+  background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.monitor-screen {
+  background: #ffffff;
+  border-radius: 6px;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Business Dashboard */
+.business-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.business-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-icon {
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.btn-add-sale {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-add-purchase {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dashboard-sidebar-nav {
+  width: 140px;
+  background: #374151;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-item {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #d1d5db;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item.active {
+  background: #2563eb;
+  color: white;
+}
+
+.dashboard-main-area {
+  flex: 1;
+  overflow: hidden;
+}
+
+.dashboard-scrollable {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px;
+}
+
+.dashboard-scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dashboard-scrollable::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.dashboard-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 120px;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.metric-chart {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 6px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metric-growth {
+  font-size: 10px;
+  color: #10b981;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.metric-date {
+  font-size: 9px;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-list {
+  margin-top: 8px;
+}
+
+.payment-item {
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-more {
+  font-size: 9px;
+  color: #2563eb;
+  margin-top: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.purchase-categories {
+  margin-top: 8px;
+}
+
+.category-item {
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Invoice Document - Right Side with 3D Tilt */
+.invoice-doc-wrapper {
+  top: 10px;
+  right: 10px;
+  transform: rotateY(15deg) rotateX(-5deg) translateZ(80px);
+  z-index: 8;
+  width: 220px;
+}
+
+.invoice-document {
+  background: white;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: translateZ(25px);
+  font-size: 9px;
+  font-family: 'Poppins', sans-serif;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.invoice-document::-webkit-scrollbar {
+  width: 3px;
+}
+
+.invoice-document::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ef4444;
+}
+
+.invoice-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ef4444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-company {
+  margin-bottom: 10px;
+}
+
+.company-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.company-address {
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.company-contact {
+  font-size: 8px;
+  color: #64748b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-bill-to {
+  margin-bottom: 10px;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.bill-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bill-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bill-address {
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bill-contact {
+  font-size: 8px;
+  color: #64748b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 9px;
+}
+
+.invoice-detail-item {
+  font-size: 9px;
+  color: #475569;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-detail-item span {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.invoice-table {
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.8fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  background: #f8fafc;
+  font-size: 9px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.8fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 9px;
+  color: #475569;
+  font-family: 'Poppins', sans-serif;
+}
+
+.invoice-summary {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 13px;
+  color: #ef4444;
+  border-top: 2px solid #e5e7eb;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.summary-row.balance {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.invoice-signature {
+  text-align: center;
+  font-size: 9px;
+  color: #64748b;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile Phone - Lower Left with 3D Tilt */
+.phone-invoice-wrapper {
+  bottom: 10px;
+  left: 180px;
+  transform: rotateY(-20deg) rotateX(10deg) translateZ(60px);
+  z-index: 6;
+  width: 140px;
+}
+
+.phone-invoice-frame {
+  background: #1a1a1a;
+  border-radius: 24px;
+  padding: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: translateZ(20px);
+}
+
+.phone-invoice-frame::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 5px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.phone-invoice-screen {
+  background: #ffffff;
+  border-radius: 18px;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+.phone-invoice-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.phone-invoice-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.phone-invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.phone-logo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-cart {
+  font-size: 18px;
+}
+
+.phone-invoice-content {
+  padding: 12px;
+  flex: 1;
+}
+
+.phone-company {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-address {
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-bill-to {
+  margin-bottom: 12px;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 6px;
+}
+
+.phone-bill-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-bill-name {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-invoice-info {
+  margin-bottom: 12px;
+  font-size: 9px;
+  color: #475569;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-items {
+  margin-bottom: 12px;
+}
+
+.phone-item {
+  font-size: 9px;
+  color: #475569;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-total {
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.phone-total-label {
+  font-size: 10px;
+  color: #64748b;
+  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-total-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ef4444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.phone-action-btn {
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Dashboard Card Hover Effects */
+.dashboard-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.3);
+  transform: translateY(-4px) translateZ(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .device-mockup-container-3d {
+    padding: 20px;
+  }
+
+  .monitor-wrapper {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .payment-card-wrapper,
+  .invoice-doc-wrapper,
+  .phone-invoice-wrapper {
+    position: relative;
+    transform: none;
+    margin-bottom: 20px;
+  }
+}

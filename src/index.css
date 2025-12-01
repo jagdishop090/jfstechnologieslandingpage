@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #1e40af;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-section: #f1f5f9;
+  --text-primary: #000000;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+  --gradient-1: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  --gradient-2: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  --gradient-3: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  --gradient-4: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Computer/Server Icon Cursor */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2' y='4' width='20' height='14' rx='2' fill='%232563eb'/%3E%3Crect x='4' y='6' width='16' height='10' rx='1' fill='%23ffffff'/%3E%3Cpath d='M8 18h8M10 20h4' stroke='%232563eb' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='11' r='1' fill='%232563eb'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+button, a, input[type='button'], input[type='submit'], .service-pill, .btn-hero-cta, .nav-cta, .nav-links button {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2' y='4' width='20' height='14' rx='2' fill='%231e40af'/%3E%3Crect x='4' y='6' width='16' height='10' rx='1' fill='%23ffffff'/%3E%3Cpath d='M8 18h8M10 20h4' stroke='%231e40af' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='11' r='1' fill='%231e40af'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #3b82f6 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2),
+              0 0 40px rgba(37, 99, 235, 0.1),
+              0 0 60px rgba(37, 99, 235, 0.05);
+}
+

@@ -1,0 +1,121 @@
+.services {
+  position: relative;
+  padding: 100px 40px;
+  background: var(--bg-white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-card {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card.gradient-1::before {
+  background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+}
+
+.service-card.gradient-2::before {
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.service-card.gradient-3::before {
+  background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+}
+
+.service-card:hover {
+  background: var(--bg-white);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.service-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.service-card:hover .service-glow {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 20px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
