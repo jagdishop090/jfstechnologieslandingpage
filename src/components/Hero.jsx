@@ -132,6 +132,24 @@ const Hero = () => {
               We create digital experiences that resonate, perform, and last. From data-driven strategies to seamless implementations, we help you transform your business.
             </motion.p>
 
+            {/* Hero Image - Mobile only, appears above service pills */}
+            <motion.div
+              className="hero-image-mobile-container"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="hero-image-wrapper-mobile">
+                <div className="hero-image-mobile">
+                  <img 
+                    src="/hero-mobile-image.jpg.png" 
+                    alt="Business Dashboard" 
+                    className="hero-dashboard-image"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
             {/* Service Categories */}
             <motion.div
               className="hero-services"
@@ -169,13 +187,6 @@ const Hero = () => {
             <div className="hero-image-wrapper">
               <div className="hero-mockup-desktop">
                 <DeviceMockup />
-              </div>
-              <div className="hero-image-mobile">
-                <img 
-                  src="/hero-mobile-image.jpg.png" 
-                  alt="Business Dashboard" 
-                  className="hero-dashboard-image"
-                />
               </div>
             </div>
           </motion.div>
