@@ -727,22 +727,23 @@
 /* Responsive */
 @media (max-width: 768px) {
   .device-mockup-container-3d {
-    padding: 10px;
-    max-width: 100%;
+    padding: 5px;
+    max-width: calc(100vw - 40px);
     width: 697px;
     min-height: 411px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(0.62) translateY(-20px);
+    transform: scale(0.52) translateY(-15px);
     transform-origin: center center;
     margin: 0 auto;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
-  /* Replicate desktop layout exactly, just scaled down */
-  /* Monitor - centered */
+  /* Replicate desktop layout exactly with same spacing */
+  /* Monitor - perfectly centered */
   .monitor-wrapper {
     width: 400px;
     left: 50%;
@@ -760,7 +761,7 @@
     height: 280px;
   }
 
-  /* Payment card - top left (10px from left, 10px from top) */
+  /* Payment card - top left (exact desktop position) */
   .payment-card-wrapper {
     top: 10px;
     left: 10px;
@@ -775,7 +776,7 @@
     padding: 16px;
   }
 
-  /* Invoice - top right (10px from right, 10px from top) */
+  /* Invoice - top right (exact desktop position) */
   .invoice-doc-wrapper {
     top: 10px;
     right: 10px;
@@ -785,10 +786,10 @@
     position: absolute;
   }
 
-  /* Phone - bottom left (180px from left, 10px from bottom) - moved left for spacing */
+  /* Phone - bottom left (exact desktop position: 180px from left) */
   .phone-invoice-wrapper {
     bottom: 10px;
-    left: 120px;
+    left: 180px;
     transform: rotateY(-20deg) rotateX(10deg) translateZ(150px);
     width: 140px;
     z-index: 20;
@@ -798,13 +799,39 @@
 
 @media (max-width: 480px) {
   .device-mockup-container-3d {
-    transform: scale(0.55) translateY(-15px);
+    transform: scale(0.45) translateY(-15px);
     min-height: 350px;
     padding: 5px;
+    width: 697px;
+    max-width: calc(100vw - 30px);
   }
   
-  /* Phone moved further left on smaller screens */
+  /* Maintain exact desktop spacing */
   .phone-invoice-wrapper {
-    left: 100px;
+    left: 180px;
+  }
+}
+
+/* iPhone 13 and similar devices (390px width) */
+@media (max-width: 420px) {
+  .device-mockup-container-3d {
+    transform: scale(0.42) translateY(-15px);
+    min-height: 320px;
+    padding: 5px;
+    width: 697px;
+    max-width: calc(100vw - 20px);
+  }
+  
+  /* Maintain exact desktop spacing - all positions same as desktop */
+  .phone-invoice-wrapper {
+    left: 180px;
+  }
+  
+  .payment-card-wrapper {
+    left: 10px;
+  }
+  
+  .invoice-doc-wrapper {
+    right: 10px;
   }
 }

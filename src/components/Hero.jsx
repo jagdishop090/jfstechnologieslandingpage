@@ -167,7 +167,16 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="hero-image-wrapper">
-              <DeviceMockup />
+              <div className="hero-mockup-desktop">
+                <DeviceMockup />
+              </div>
+              <div className="hero-image-mobile">
+                <img 
+                  src="/hero-mobile-image.jpg.png" 
+                  alt="Business Dashboard" 
+                  className="hero-dashboard-image"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
