@@ -727,57 +727,84 @@
 /* Responsive */
 @media (max-width: 768px) {
   .device-mockup-container-3d {
-    padding: 20px 10px;
+    padding: 10px;
     max-width: 100%;
-    min-height: auto;
+    width: 697px;
+    min-height: 411px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(0.62) translateY(-20px);
+    transform-origin: center center;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
   }
 
+  /* Replicate desktop layout exactly, just scaled down */
+  /* Monitor - centered */
   .monitor-wrapper {
-    width: 100%;
-    max-width: 100%;
+    width: 400px;
     left: 50%;
+    top: 10px;
     transform: translateX(-50%) rotateY(-8deg) rotateX(3deg) translateZ(100px);
+    z-index: 10;
+    position: absolute;
   }
 
   .monitor-frame {
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
   }
 
   .monitor-screen {
-    height: 220px;
+    height: 280px;
   }
 
+  /* Payment card - top left (10px from left, 10px from top) */
   .payment-card-wrapper {
+    top: 10px;
+    left: 10px;
+    transform: rotateY(-15deg) rotateX(5deg) translateZ(50px);
+    width: 180px;
+    z-index: 5;
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 140px;
-    transform: rotateY(-15deg) rotateX(5deg) translateZ(50px) scale(0.8);
   }
 
   .payment-card {
-    width: 140px;
-    padding: 12px;
-  }
-
-  .invoice-doc-wrapper {
-    position: absolute;
-    top: 5px;
-    right: 5px;
     width: 180px;
-    transform: rotateY(15deg) rotateX(-5deg) translateZ(80px) scale(0.85);
+    padding: 16px;
   }
 
-  .phone-invoice-wrapper {
+  /* Invoice - top right (10px from right, 10px from top) */
+  .invoice-doc-wrapper {
+    top: 10px;
+    right: 10px;
+    transform: rotateY(15deg) rotateX(-5deg) translateZ(80px);
+    width: 220px;
+    z-index: 8;
     position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%) rotateY(-20deg) rotateX(10deg) translateZ(60px) scale(0.9);
-    width: 120px;
+  }
+
+  /* Phone - bottom left (180px from left, 10px from bottom) - moved left for spacing */
+  .phone-invoice-wrapper {
+    bottom: 10px;
+    left: 120px;
+    transform: rotateY(-20deg) rotateX(10deg) translateZ(150px);
+    width: 140px;
+    z-index: 20;
+    position: absolute;
+  }
+}
+
+@media (max-width: 480px) {
+  .device-mockup-container-3d {
+    transform: scale(0.55) translateY(-15px);
+    min-height: 350px;
+    padding: 5px;
+  }
+  
+  /* Phone moved further left on smaller screens */
+  .phone-invoice-wrapper {
+    left: 100px;
   }
 }
